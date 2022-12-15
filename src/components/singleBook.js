@@ -5,7 +5,8 @@ const SingleBook = (props) => {
   const { title, author } = props;
 
   const handleClick = () => {
-    alert('Do You really want to delete this book from the list');
+    // eslint-disable-next-line no-alert
+    // alert('Do You want to delete this book from the list');
   };
   return (
     <div className="singleBook">
