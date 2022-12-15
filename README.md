@@ -28,7 +28,7 @@
 
 # 📖 Bookstore App <a name="about-project"></a>
 
-"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to: Make simple calculations. Read a random math-related quote.
+"Bookstore App" is a website for all lovers of books. It is a Single Page App (SPA) that allows users to: Make add new book, delete and search for appropriate book.
 
 ## 🛠 Built With 
 <a name="built-with">![HTML](https://img.shields.io/badge/-HTML-orange) <br> ![CSS](https://img.shields.io/badge/-CSS-blue) <br> ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) <br> ![React.js](https://img.shields.io/badge/-Rect.js-green)</a>
