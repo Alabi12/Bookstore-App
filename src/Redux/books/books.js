@@ -5,8 +5,6 @@ const initialState = {
 // Actions
 export const ADD_BOOK = 'add-book';
 export const REMOVE_BOOK = 'remove-book';
-export const GET_BOOKS = 'get-books';
-export const SET_BOOKS = 'set-books';
 
 // Action Creators
 export function addBook(newBook) {
@@ -31,12 +29,6 @@ export default function reducer(state = initialState, action) {
         ...state,
         books: state.books.filter((newBook) => newBook !== action.id),
       };
-    case GET_BOOKS: {
-      return state;
-    }
-    case SET_BOOKS: {
-      return action.books;
-    }
     default:
       return state;
   }
