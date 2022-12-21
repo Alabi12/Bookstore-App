@@ -13,7 +13,7 @@ const BookList = () => {
           title={book.title}
           author={book.author}
           id={book.id}
-          type="Fiction"
+          type="Nothing to display"
         />
       ))}
       <SingleBook />
