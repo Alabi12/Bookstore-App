@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import SingleBook from './singleBook';
+import SingleBook from './SingleBook';
 import Book from './Book';
 
 const BookList = () => {
