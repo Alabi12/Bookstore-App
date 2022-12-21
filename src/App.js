@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import BookList from './components/BookList';
 import NavBar from './components/navBar';
 import Categories from './components/categories';
+
 import Footer from './components/footer';
-import BookList from './components/BookList';
 
 function App() {
   return (
