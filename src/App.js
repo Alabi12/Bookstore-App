@@ -6,17 +6,15 @@ import NavBar from './components/navBar';
 import Categories from './components/categories';
 import Footer from './components/footer';
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<BookList />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
-      <Footer />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<BookList />} />
+      <Route path="/categories" element={<Categories />} />
+    </Routes>
+    <Footer />
+  </div>
+);
 
 export default App;
