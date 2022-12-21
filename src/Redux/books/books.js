@@ -2,6 +2,7 @@
 const books = [
   { title: 'The Games', author: 'Julius Cambel', id: 1 },
   { title: 'Financial Planning', author: 'Robert Allan', id: 2 },
+  { title: 'Financial Planers', author: 'Benjamin Bruce', id: 3 },
 ];
 
 // Actions
