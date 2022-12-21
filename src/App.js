@@ -1,23 +1,20 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import BookList from './components/BookList';
 import NavBar from './components/navBar';
-import HomePage from './components/homePage';
 import Categories from './components/categories';
 import Footer from './components/footer';
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<BookList />} />
+      <Route path="/categories" element={<Categories />} />
+    </Routes>
+    <Footer />
+  </div>
+);
 
 export default App;

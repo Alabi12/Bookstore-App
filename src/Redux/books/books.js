@@ -1,35 +1,34 @@
-const initialState = {
-  books: [],
-};
+// Books Display
+const books = [
+  { title: 'The Games', author: 'Julius Cambel', id: 1 },
+  { title: 'Financial Planning', author: 'Robert Allan', id: 2 },
+  { title: 'Financial Planers', author: 'Benjamin Bruce', id: 3 },
+];
 
 // Actions
-export const ADD_BOOK = 'add-book';
-export const REMOVE_BOOK = 'remove-book';
+const ADD_BOOK = 'books/books/ADD_BOOK';
+const REMOVE_BOOK = 'books/books/REMOVE_BOOK';
 
 // Action Creators
-export function addBook(newBook) {
-  return { type: ADD_BOOK, newBook };
-}
+export const addBook = (data) => (dispatch) => {
+  dispatch({ type: ADD_BOOK, payload: data });
+};
 
-export function removeBook(id) {
-  return { type: REMOVE_BOOK, id };
-}
+export const removeBook = (id) => (dispatch) => {
+  dispatch({ type: REMOVE_BOOK, payload: id });
+};
 
 // Reducer
-export default function reducer(state = initialState, action) {
+const booksReducer = (state = books, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return {
-        ...state,
-        books: [...state.books, action.newBook],
-      };
-
+    case ADD_BOOK: {
+      return [...state, action.payload];
+    }
     case REMOVE_BOOK:
-      return {
-        ...state,
-        books: state.books.filter((newBook) => newBook !== action.id),
-      };
+      return state.filter((book) => book.id !== action.payload);
     default:
       return state;
   }
-}
+};
+
+export default booksReducer;
