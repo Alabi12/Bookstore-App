@@ -1,12 +1,12 @@
 import React from 'react';
 import BookList from './bookList';
-import AddBook from './addBook';
+import Book from './book';
 
-const homePage = () => (
+const HomePage = () => (
   <div className="homePage">
     <BookList />
-    <AddBook />
+    <Book />
   </div>
 );
 
-export default homePage;
+export default HomePage;

@@ -1,32 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../Redux/books/books';
 
-const SingleBook = (props) => {
-  const { title, author } = props;
+const SingleBook = () => {
+  const [data, setData] = useState({
+    title: '',
+    author: '',
+  });
 
-  const handleClick = () => {
-    // eslint-disable-next-line no-alert
-    // alert('Do You want to delete this book from the list');
+  const dispatch = useDispatch();
+  const changeHandler = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
   };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const newBook = {
+      id: uuidv4(),
+      title: data.title,
+      author: data.author,
+    };
+    dispatch(addBook(newBook));
+    setData({ title: '', author: '' });
+  };
+
   return (
-    <div className="singleBook">
-      <h3>{title}</h3>
-      <p>{author}</p>
-      <button type="button" onClick={handleClick}>
-        Remove Book
-      </button>
+    <div>
+      <form onSubmit={submitHandler}>
+        <input
+          type="text"
+          name="title"
+          value={data.title}
+          onChange={changeHandler}
+          placeholder="Book Title"
+        />
+        <input
+          type="text"
+          name="author"
+          value={data.author}
+          onChange={changeHandler}
+          placeholder="Author"
+        />
+        <button type="submit">Add Book</button>
+      </form>
     </div>
   );
-};
-
-SingleBook.defaultProps = {
-  title: '',
-  author: '',
-};
-
-SingleBook.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
 };
 
 export default SingleBook;
