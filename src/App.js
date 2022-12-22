@@ -1,20 +1,20 @@
-import './App.css';
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import BookList from './components/BookList';
-import NavBar from './components/NavBar';
-import Categories from './components/Categories';
-import Footer from './components/Footer';
+import './index.css';
+import { Provider } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+
+import Navigate from './components/Navigation';
+import Categories from './pages/Categories';
+import Home from './pages/Home';
+import store from './Redux/configureStore';
 
 const App = () => (
-  <div className="App">
-    <NavBar />
+  <Provider store={store}>
+    <Navigate />
     <Routes>
-      <Route path="/" element={<BookList />} />
+      <Route path="/" element={<Home />} />
       <Route path="/categories" element={<Categories />} />
     </Routes>
-    <Footer />
-  </div>
+  </Provider>
 );
 
 export default App;
