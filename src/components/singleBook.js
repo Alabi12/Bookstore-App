@@ -7,21 +7,21 @@ const SingleBook = () => {
   const [data, setData] = useState({
     title: '',
     author: '',
+    category: 'Fiction',
   });
 
   const dispatch = useDispatch();
   const changeHandler = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
   const submitHandler = (e) => {
     e.preventDefault();
     const newBook = {
-      id: uuidv4(),
-      title: data.title,
-      author: data.author,
+      item_id: uuidv4(),
+      ...data,
     };
     dispatch(addBook(newBook));
-    setData({ title: '', author: '' });
+    // setData({ title: '', author: '', category: '' });
   };
 
   return (
