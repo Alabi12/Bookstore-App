@@ -1,21 +1,18 @@
-const initialState = [];
+const STATUS_CHECKER = 'booklist/books/STATUS_CHECKER';
 
-// Action
-const CHECK_STATUS = 'categories/categories/CHECK_STATUS';
+const categories = [];
 
-// Action Creators
-export const checksStatus = () => (dispatch) => {
-  dispatch({ type: CHECK_STATUS, payload: 'Under Construction' });
-};
-
-// Reducer
-const categoriesReducer = (state = initialState, action) => {
+const categoriesReducer = (state = categories, action) => {
   switch (action.type) {
-    case CHECK_STATUS:
-      return [action.payload];
+    case STATUS_CHECKER:
+      return 'Under construction';
     default:
       return state;
   }
 };
+
+export const statusCheck = () => ({
+  type: STATUS_CHECKER,
+});
 
 export default categoriesReducer;
