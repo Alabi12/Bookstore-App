@@ -1,6 +1,7 @@
 import './index.css';
 import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+
 import Navigate from './components/Navigation';
 import Categories from './pages/Categories';
 import Home from './pages/Home';
