@@ -22,7 +22,7 @@ const Book = ({
             className="book-button"
             onClick={() => dispatch(removeBook(id))}
           >
-            Delete
+            Remove
           </button>
           <button type="button" className="book-button">
             Edit
@@ -32,13 +32,17 @@ const Book = ({
       <div className="progress-container">
         <div className="circular-progress-bar" />
         <div className="completed">
-          <p>0%</p>
+          <p>57%</p>
           <p>Completed</p>
         </div>
-        <div className="current-chapter">Chapter 0</div>
-        <button type="button" className="update-progress-button">
-          Update Progress
-        </button>
+        <div className="divider" />
+        <div className="chapter-container">
+          <div className="current-chapter">Current Chapter</div>
+          <div className="chapter">Chapter 20</div>
+          <button type="button" className="update-progress-button">
+            Update Progress
+          </button>
+        </div>
       </div>
     </div>
   );
